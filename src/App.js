@@ -4,8 +4,17 @@ import Header from "./Components/Header/Header";
 import banner from './images/banner.jpg'
 import TodoProvider from "./Reducer/Reducer";
 
-import { HashRouter, Route } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 export default function App() {
+
+    const Home = () => {
+        return (
+            <>
+                <BackgroundImage image={banner} />
+                <ToDo />
+            </>
+        )
+    }
     
     return (
         <div className="App">
@@ -15,13 +24,9 @@ export default function App() {
             <main className="relative w-full h-[94vh] md:h-[90vh] overflow-hidden">
                 <TodoProvider>
                     <HashRouter>
-                        <Route exact path="/" element={
-                            <>
-                                <BackgroundImage image={banner} />
-                                <ToDo />
-                            </>
-                        } />
-                        
+                        <Routes>
+                           <Route path="/" element={<Home />} />
+                        </Routes>
                     </HashRouter>
                </TodoProvider>
             </main>
