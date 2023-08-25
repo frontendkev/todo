@@ -9,14 +9,14 @@ export default function BottomNav() {
     const todo = useContext(Todo)
     const { filterTodo, deleteTask } = Services()
     return (
-        <section className="relative w-full md:w-full lg:w-[70%] h-[3em] landscape:h-[2em] landscape:lg:h-[3em] shadow-light pl-2 pr-2 flex flex-row justify-between">
+        <section className="relative w-full lg:w-[70%] portrait:h-[3em] landscape:h-[2em] landscape:lg:h-[3em] shadow-light pl-2 pr-2 flex flex-row justify-between">
             <div className="relative w-fit h-full flex flex-row items-center">
-                <small className="relative capitalize font-quicksandsemibold text-gray-300 text-[0.6em] md:text-[0.8em]">
+                <small className="relative capitalize font-quicksandsemibold text-gray-300 text-[0.7em] md:text-[0.8em]">
                     {
                         todo.activeTasks.length + ' '
                     }
                     {
-                        todo.activeTasks.length > 1 ? 'items remaining' : 'item remaining'
+                        todo.activeTasks.length > 1 ? 'tasks left' : 'task left'
                     }
                 </small>
 
@@ -33,7 +33,7 @@ export default function BottomNav() {
             </div>
 
             <div className="relative w-fit h-full flex items-center">
-                <button onClick={() => deleteTask({type: 'removecompleted'})} className="relative capitalize font-quicksandsemibold text-gray-300 text-[0.6em] md:text-[0.8em] hover:text-rose-500 transition-all duration-300 ease-in-out">
+                <button onClick={() => deleteTask({type: 'removecompleted'})} className="relative capitalize font-quicksandsemibold text-gray-300 text-[0.7em] md:text-[0.8em] hover:text-rose-500 transition-all duration-300 ease-in-out">
 
                     clear completed
 
