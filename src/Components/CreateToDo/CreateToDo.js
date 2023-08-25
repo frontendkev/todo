@@ -13,7 +13,7 @@ export default function CreateToDo() {
         return setTask(() => '')
     }
     return (
-        <form onSubmit={(e) => create(e)} className="relative w-full lg:w-[70%] shadow-light portrait:h-[55px] landscape:h-[2.6em] md:h-[3em] overflow-hidden flex flex-row justify-between rounded-[0.2em] bg-mygray">
+        <form onSubmit={(e) => create(e)} className="relative w-full lg:w-[70%] shadow-light portrait:h-[45px] landscape:h-[2.6em] md:h-[3em] overflow-hidden flex flex-row justify-between rounded-[0.2em] bg-mygray">
             <div className="relative w-[85%] md:w-[90%] h-full overflow-hidden">
                 <input value={task} onChange={(e) => setTask(() => e.target.value)} className="relative w-full h-full text-start pl-2 focus:outline-0 bg-mygray text-gray-300 capitalize font-quicksandsemibold text-[0.8em]" placeholder="create-to-do..." required />
             </div>
